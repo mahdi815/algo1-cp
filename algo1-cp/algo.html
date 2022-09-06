@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>The number of vowels in the sentence</title>
+        <script src="algo.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    input
+                </td>
+                <td><input type="text" id="t1" name=""</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="Click" onclick="go()"></td>
+            </tr>
+        </table>
+        <p id="p1"></p>
+        <p id="p2"></p>
+
+        
+        <div class="wrapper">
+            <!--display -->
+            <div class="count">
+                <div>
+                    <h5 id="word-count">0</h5>
+                    <p>words</p>
+                </div>
+                <div>
+                    <h5 id="charac-count">0</h5>
+                    <p>characters</p>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            let inputTextArea = document.getElementById("t1");
+            let characCount = document.getElementById("charac-count")
+            let wordCount = document.getElementById("word-count")
+
+            inputTextArea.addEventListener("input", () => {
+                characCount.textContent = inputTextArea.value.length;
+                let txt = inputTextArea.value.trim();
+                wordCount.textContent = txt.split(/\s+/).filter((item) => item).length;
+            });
+        </script>
+
+
+    </body>
+</html>
